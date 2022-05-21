@@ -46,6 +46,7 @@ export class LoginView extends React.Component {
           <input type="password" value={this.state.password} onChange={this.onPasswordChange} />
         </label>
         <button type="button" onClick={this.handleSubmit}>Submit</button>
+        <button type="button">Register</button>
       </form>
     );
   }
