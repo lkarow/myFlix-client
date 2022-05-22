@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 export function RegistrationView(props) {
   const [ username, setUsername] = useState('');
@@ -46,4 +47,13 @@ export function RegistrationView(props) {
       <button type="button" onClick={handleRegister}>Register</button>
     </form>
   )
+}
+
+RegistrationView.PropTypes = {
+  user: PropTypes.shape({
+    Username: PropTypes.string.isRequired,
+    Password: PropTypes.string.isRequired,
+    Email: PropTypes.string.isRequired,
+    Birthday: PropTypes.string
+  }).isRequired
 }
