@@ -1,5 +1,12 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
+import './registration-view.scss';
 
 export function RegistrationView(props) {
   const [ username, setUsername] = useState('');
@@ -13,39 +20,37 @@ export function RegistrationView(props) {
   }
 
   return (
-    <form>
-      <label>
-        Username:
-        <input 
-          type="text" value={username} 
-          onChange={e => setUsername(e.target.value)}
-          placeholder="Username" required />
-      </label>
-      <label>Password:
-        <input 
-          type="text" 
-          value={password} 
-          onChange={e => setPassword(e.target.value)}
-          placeholder="Password" required />
-        </label>
-      <label>
-        Email:
-        <input 
-          type="text" 
-          value={email} 
-          onChange={e => setEmail(e.target.value)}
-          placeholder="your@mail.com" required />
-      </label>
-      <label>
-        Birthday:
-        <input 
-          type="text" 
-          value={birthday} 
-          onChange={e => setBirthday(e.target.value)}
-          placeholder="YYYY-MM-DD" />
-      </label>
-      <button type="button" onClick={handleRegister}>Register</button>
-    </form>
+    <Container id="registration-form">
+      <Row className="justify-content-center">
+        <Col sm="10" md="8" lg="6">
+          <Form>
+            <Form.Group controlId="formUsername">
+              <Form.Label>Username:</Form.Label>
+              <Form.Control type="text" value={username} onChange={e => setUsername(e.target.value)} placeholder="Username" required/>
+            </Form.Group>
+            <Form.Group controlId="formPassword">
+              <Form.Label>Password:</Form.Label>
+              <Form.Control type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" required />
+            </Form.Group>
+            <Form.Group controlId="formEmail">
+              <Form.Label>Password:</Form.Label>
+              <Form.Control type="text" value={email} onChange={e => setEmail(e.target.value)} placeholder="your@mail.com" required />
+            </Form.Group>
+
+            <Form.Group controlId="formBirthday">
+              <Form.Label>Password:</Form.Label>
+              <Form.Control type="text" value={birthday} onChange={e => setBirthday(e.target.value)} placeholder="YYYY-MM-DD" />
+            </Form.Group>
+            
+            <Row className="mt-3 justify-content-start">
+              <Col sm="10" md="8" lg="6">
+                <Button  variant="warning" type="submit" onClick={handleRegister}>Register</Button>
+              </Col>
+            </Row>
+          </Form>
+        </Col>
+      </Row>
+    </Container>
   )
 }
 
