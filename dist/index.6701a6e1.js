@@ -25272,7 +25272,9 @@ class MainView extends _reactDefault.default.Component {
                     __self: this
                 })
             }) : movies.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                    md: 3,
+                    sm: 6,
+                    md: 4,
+                    lg: 3,
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
                         lineNumber: 70

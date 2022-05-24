@@ -18,8 +18,13 @@ body {
   position: absolute;
   top: 30%;
 }
+.main-view {
+  row-gap: 30px;
+}
+
 #movie-card {
   background-color: rgb(245, 245, 245);
+  height: 100%;
 }
 
 #card-title {
