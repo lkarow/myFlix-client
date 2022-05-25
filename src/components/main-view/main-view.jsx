@@ -31,6 +31,14 @@ class MainView extends React.Component {
       .catch(error => {
         console.log(error);
       });
+
+      let accessToken = localStorage.getItem('token');
+      if (accessToken !== null) {
+        this.setState({
+          user: localStorage.getItem('user')
+        });
+        this.getMovies(accessToken);
+      }
   }
 
   // when movie is clicked, this function is invoked and updates the state of the 'selectedMovie' property to that movie
@@ -41,9 +49,28 @@ class MainView extends React.Component {
   }
 
   // when user successfully logs in, this function updates the 'user' property in state to that particular user
-  onLoggedIn(user) {
+  onLoggedIn(authData) {
+    console.log(authData);
     this.setState({
-      user
+      user: authData.user.Username
+    });
+    localStorage.setItem('token', authData.token);
+    localStorage.setItem('user', authData.user.Username);
+    this.getMovies(authData.token);
+  }
+
+  getMovies(token) {
+    axios.get('https://movie-api-93167.herokuapp.com/movies', {
+      headers: { Authorization: `Bearer ${token}`}
+    })
+    .then(response => {
+      // assign the result to the state
+      this.setState({
+        movies: response.data
+      });
+    })
+    .catch(function (error) {
+      console.log(error);
     });
   }
 
