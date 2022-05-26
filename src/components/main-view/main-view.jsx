@@ -2,6 +2,9 @@ import React from 'react';
 import axios from 'axios';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+
 
 import { LoginView } from '../login-view/login-view';
 import { RegistrationView } from '../registration-view/registration-view';
@@ -59,6 +62,14 @@ class MainView extends React.Component {
     this.getMovies(authData.token);
   }
 
+  onLoggedOut() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    this.setState({
+      user: null
+    });
+  }
+
   getMovies(token) {
     axios.get('https://movie-api-93167.herokuapp.com/movies', {
       headers: { Authorization: `Bearer ${token}`}
@@ -85,21 +96,24 @@ class MainView extends React.Component {
   
     return (
       // If the state of 'selectedMovie' is not null, that selecetd movie will be returned otherwise, all movies will be returned
-      <Row className="main-view justify-content-md-center">
-        {selectedMovie 
-          ? (
-              <Col md={8}>
-                <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
-              </Col>
-            )
-            
-          : movies.map(movie => (
-              <Col sm={6} md={4} lg={3}>
-                <MovieCard key={movie._id} movie={movie} onMovieClick={(newSelectedMovie) => { this.setSelectedMovie(newSelectedMovie) }}/>
-              </Col>
-            ))
-        }
-      </Row>
+      <Container>
+        <Row className="main-view justify-content-md-center">
+          {selectedMovie 
+            ? (
+                <Col md={8}>
+                  <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
+                </Col>
+              )
+              
+            : movies.map(movie => (
+                <Col sm={6} md={4} lg={3}>
+                  <MovieCard key={movie._id} movie={movie} onMovieClick={(newSelectedMovie) => { this.setSelectedMovie(newSelectedMovie) }}/>
+                </Col>
+              ))
+          }
+        </Row>
+        <Button variant="warning" onClick={() => { this.onLoggedOut() }}>Logout</Button>
+      </Container>
     );
   }
 }
