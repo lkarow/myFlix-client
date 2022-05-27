@@ -74,7 +74,6 @@ export function LoginView(props) {
             <Row className="mt-3 justify-content-start">
               <Col sm="10" md="8" lg="6">
                 <Button  variant="warning" type="submit" onClick={handleSubmit}>Login</Button>
-                <Button variant="warning" className="ml-3">Register</Button>
               </Col>
             </Row>
           </Form>
