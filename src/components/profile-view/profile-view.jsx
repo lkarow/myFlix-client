@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
-import { Container, Row, Col, Button } from 'react-bootstrap';
 
-import { UpdateView } from './update-view';
+import { Button, Col, Container, Row } from 'react-bootstrap';
+
 import { FavoriteMoviesView } from './favorite-movie-view';
+import { UpdateView } from './update-view';
 
 import './profile-view.scss';
 
@@ -23,7 +24,7 @@ export function ProfileView(props) {
     .then(response => {
       setUser(response.data);
       setUpdateUser(response.data);
-      // setFavoriteMovies(props.movies.filter(m => response.data.FavoriteMovies.includes(m._id)));
+      setFavoriteMovies(props.movies.filter(m => response.data.FavoriteMovies.includes(m._id)));
     })
     .catch(error => console.error(error))
   }
@@ -64,7 +65,7 @@ export function ProfileView(props) {
         </Row>
         <Row className="mt-3">
         <Col className="label">Favorite Movies: </Col>
-        <Col className="value"><FavoriteMoviesView movies={movies} user={user} /></Col>
+        <Col className="value"><FavoriteMoviesView movies={movies} user={user} favoriteMovies={favoriteMovies} /></Col>
         </Row>
         <UpdateView user={user}/>
         <Button className="d-block mt-5" variant="warning" onClick={handleDelete}>Delete profile</Button>

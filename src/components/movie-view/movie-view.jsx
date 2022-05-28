@@ -1,16 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
-
 import { Link } from 'react-router-dom';
+
+import { Button, Col, Container, Row } from 'react-bootstrap/';
 
 import './movie-view.scss';
 
 export class MovieView extends React.Component {
-
   keypressCallback(event) {
     console.log(event.key);
   }
@@ -59,7 +55,8 @@ MovieView.propTypes = {
     Director: PropTypes.shape({
       Name: PropTypes.string.isRequired,
       Bio: PropTypes.string.isRequired,
-      Birth: PropTypes.string.isRequired
+      Birth: PropTypes.string.isRequired,
+      Death: PropTypes.string
     }),
     Genre: PropTypes.shape({
       Name: PropTypes.string.isRequired,

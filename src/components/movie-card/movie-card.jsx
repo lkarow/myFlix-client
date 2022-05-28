@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-
 import { Link } from 'react-router-dom';
+
+import { Button, Card } from 'react-bootstrap/';
 
 import './movie-card.scss';
 
@@ -36,7 +35,8 @@ MovieCard.propTypes = {
     Director: PropTypes.shape({
       Name: PropTypes.string.isRequired,
       Bio: PropTypes.string.isRequired,
-      Birth: PropTypes.string.isRequired
+      Birth: PropTypes.string.isRequired,
+      Death: PropTypes.string
     }),
     Genre: PropTypes.shape({
       Name: PropTypes.string.isRequired,

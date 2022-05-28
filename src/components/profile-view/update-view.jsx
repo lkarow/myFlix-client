@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
-import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+
+import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 
 import './profile-view.scss';
 

@@ -2,17 +2,16 @@ import React from 'react';
 import axios from 'axios';
 import { BrowserRouter as Router, Route, Redirect  } from 'react-router-dom';
 
+import { Col, Row } from 'react-bootstrap/';
+
 import { DirectorView } from '../director-view/director-view';
 import { GenreView } from '../genre-view/genre-view';
 import { LoginView } from '../login-view/login-view';
-import { RegistrationView } from '../registration-view/registration-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { Navbar } from '../navbar/navbar';
 import { ProfileView } from '../profile-view/profile-view';
-
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import { RegistrationView } from '../registration-view/registration-view';
 
 import './main-view.scss';
 

@@ -26,12 +26,6 @@ body {
   position: absolute;
   top: 30%;
 }
-#registration-form {
-  background-color: rgb(9, 27, 73);
-  color: rgb(245, 245, 245);
-  position: absolute;
-  top: 30%;
-}
 .main-view {
   row-gap: 30px;
 }
@@ -63,6 +57,12 @@ body {
   font-weight: bold;
 }
 #profile-form {
+  background-color: rgb(9, 27, 73);
+  color: rgb(245, 245, 245);
+  position: absolute;
+  top: 30%;
+}
+#registration-form {
   background-color: rgb(9, 27, 73);
   color: rgb(245, 245, 245);
   position: absolute;
