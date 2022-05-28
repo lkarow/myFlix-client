@@ -13,7 +13,7 @@ export class GenreView extends React.Component {
       <Container className="director-view">
         <Row>
           <Col className="label">Genre: </Col>
-            <Col className="value">{genre.Name}</Col>
+          <Col className="value">{genre.Name}</Col>
         </Row>
         <Row className="mt-3">
           <Col className="label">Description: </Col>

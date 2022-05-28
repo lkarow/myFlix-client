@@ -13,7 +13,7 @@ export class DirectorView extends React.Component {
       <Container className="director-view">
         <Row>
           <Col className="label">Director: </Col>
-            <Col className="value">{director.Name}</Col>
+          <Col className="value">{director.Name}</Col>
         </Row>
         <Row className="mt-3">
           <Col className="label">Bio: </Col>
@@ -38,6 +38,6 @@ DirectorView.propTypes = {
     Name: PropTypes.string.isRequired,
     Bio: PropTypes.string.isRequired,
     Birth: PropTypes.string.isRequired,
-    Death: PropTypes.string.isRequired
+    Death: PropTypes.string
   }).isRequired
 };
