@@ -6,6 +6,20 @@
 body {
   background-color: rgb(9, 27, 73);
 }
+.director-view {
+  color: rgb(245, 245, 245);
+}
+
+.label {
+  font-weight: bold;
+}
+.genre-view {
+  color: rgb(245, 245, 245);
+}
+
+.label {
+  font-weight: bold;
+}
 #login-form {
   background-color: rgb(9, 27, 73);
   color: rgb(245, 245, 245);
@@ -47,6 +61,12 @@ body {
 
 .label {
   font-weight: bold;
+}
+#profile-form {
+  background-color: rgb(9, 27, 73);
+  color: rgb(245, 245, 245);
+  position: absolute;
+  top: 30%;
 }
 
 /*# sourceMappingURL=index.caa67093.css.map */
