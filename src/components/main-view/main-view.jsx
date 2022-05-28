@@ -44,7 +44,6 @@ class MainView extends React.Component {
     .then(response => {
       // assign the result to the state
       this.setState({
-        
         movies: response.data
       });
     })

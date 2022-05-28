@@ -7,6 +7,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 import './registration-view.scss';
+
 import axios from 'axios';
 
 export function RegistrationView(props) {

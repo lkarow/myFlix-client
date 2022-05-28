@@ -13,7 +13,7 @@ export function Navbar({user}) {
   };
 
   const onLoggedOut = () => {
-    localStorage.clear()
+    localStorage.clear();
     window.open('/', '_self');
   }
 
