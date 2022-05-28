@@ -30,7 +30,7 @@ export function ProfileView(props) {
 
   useEffect(() => {
     getUser();
-  })
+  }, [])
 
   const handleDelete = () => {
     axios.delete(`https://movie-api-93167.herokuapp.com/users/${currentUser}`, {

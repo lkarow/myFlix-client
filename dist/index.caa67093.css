@@ -13,6 +13,13 @@ body {
 .label {
   font-weight: bold;
 }
+.genre-view {
+  color: rgb(245, 245, 245);
+}
+
+.label {
+  font-weight: bold;
+}
 #login-form {
   background-color: rgb(9, 27, 73);
   color: rgb(245, 245, 245);
@@ -62,11 +69,4 @@ body {
   top: 30%;
 }
 
-.genre-view {
-  color: rgb(245, 245, 245);
-}
-
-.label {
-  font-weight: bold;
-}
 /*# sourceMappingURL=index.caa67093.css.map */
