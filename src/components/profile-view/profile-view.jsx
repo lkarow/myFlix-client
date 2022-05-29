@@ -11,11 +11,10 @@ import './profile-view.scss';
 
 export function ProfileView(props) {
   const [ user, setUser ] = useState(props.user);
-  const [ updateUser, setUpdateUser ] = useState({});
-  const [ favoriteMovies, setFavoriteMovies ] = useState ([]);
+  const [ movies, setMovies ] = useState(props.movies);
+  const [ favoriteMovies, setFavoriteMovies ] = useState([]);
   const currentUser = localStorage.getItem('user');
   const token = localStorage.getItem('token');
-  const [movies, setMovies ] = useState(props.movies);
 
   const getUser = () => {
     axios.get(`https://movie-api-93167.herokuapp.com/users/${currentUser}`, {
@@ -23,8 +22,7 @@ export function ProfileView(props) {
     })
     .then(response => {
       setUser(response.data);
-      setUpdateUser(response.data);
-      setFavoriteMovies(props.movies.filter(m => response.data.FavoriteMovies.includes(m._id)));
+      setFavoriteMovies(response.data.FavoriteMovies)
     })
     .catch(error => console.error(error))
   }
@@ -47,28 +45,33 @@ export function ProfileView(props) {
 
   return (
     <Container id="profile-form">
+      <Row><h4>Your profile</h4></Row>
       <Row>
-        <Col className="label">Username: </Col>
+        <Col className="label">Username:</Col>
         <Col className="value">{user.Username}</Col>
         </Row>
         <Row className="mt-3">
-        <Col className="label">Password: </Col>
+        <Col className="label">Password:</Col>
         <Col className="value">******</Col>
         </Row>
         <Row className="mt-3">
-        <Col className="label">Email: </Col>
+        <Col className="label">Email:</Col>
         <Col className="value">{user.Email}</Col>
         </Row>
         <Row className="mt-3">
-        <Col className="label">Birthday: </Col>
+        <Col className="label">Birthday:</Col>
         <Col className="value">{user.Birthday}</Col>
         </Row>
+        <Row className="mt-5"><h4>Your favorite movies</h4></Row>
         <Row className="mt-3">
-        <Col className="label">Favorite Movies: </Col>
-        <Col className="value"><FavoriteMoviesView movies={movies} user={user} favoriteMovies={favoriteMovies} /></Col>
+          <FavoriteMoviesView 
+          movies={movies} 
+          favoriteMovies={favoriteMovies} 
+          currentUser={currentUser} 
+          token={token}/>
         </Row>
         <UpdateView user={user}/>
         <Button className="d-block mt-5" variant="warning" onClick={handleDelete}>Delete profile</Button>
-  </Container>
+    </Container>
   )
 }
