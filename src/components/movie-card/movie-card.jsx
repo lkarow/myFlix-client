@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
+
 import { Link } from 'react-router-dom';
 
 import { Button, Card } from 'react-bootstrap/';
@@ -7,6 +9,22 @@ import { Button, Card } from 'react-bootstrap/';
 import './movie-card.scss';
 
 export class MovieCard extends React.Component {
+
+  addToFavoriteList(movieId) {
+    const currentUser = localStorage.getItem('user');
+    const token = localStorage.getItem('token');
+    axios.put(`https://movie-api-93167.herokuapp.com/users/${currentUser}/movies/${movieId}`, 
+    {},
+    {
+      headers: { Authorization: `Bearer ${token}`}
+    })
+    .then((response) => {
+      console.log(response.data)
+      alert(`The movie was successfully add to your list.`)
+    }).
+    catch(error => console.error(error))
+  }
+
   render() {
     const { movie } = this.props;
 
@@ -21,6 +39,7 @@ export class MovieCard extends React.Component {
           <Link to={`/movies/${movie._id}`}>
             <Button className="button" variant="outline-primary" size="sm">Open</Button>
           </Link>
+          <Button className="button ml-2" variant="outline-primary" size="sm" onClick={() => this.addToFavoriteList(movie._id) }>Add</Button>
         </Card.Body>
       </Card>
     )
