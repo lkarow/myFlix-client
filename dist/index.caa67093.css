@@ -32,6 +32,7 @@ body {
 
 #movie-card {
   background-color: rgb(245, 245, 245);
+  color: rgb(9, 27, 73);
   height: 100%;
 }
 
@@ -61,6 +62,10 @@ body {
   color: rgb(245, 245, 245);
   position: absolute;
   top: 30%;
+}
+
+#profile-form #movie-card {
+  color: rgb(9, 27, 73);
 }
 #registration-form {
   background-color: rgb(9, 27, 73);
