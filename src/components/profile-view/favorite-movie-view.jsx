@@ -1,37 +1,41 @@
 import React, { Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
-import { Button, Col, Container, From, Row } from 'react-bootstrap';
+import { Button, Card, Col } from 'react-bootstrap';
 
 import './profile-view.scss';
 
 export function FavoriteMoviesView(props) {
-  const [user, setUser ] = useState(props.user);
-  const [movies, setMovies ] = useState(props.movies);
-  const [ favoriteMovies, setFavoriteMovies ] = useState('');
+  const { movies, favoriteMovies, currentUser, token } = props;
+
+  const favoriteMoviesId = favoriteMovies.map(m => m._id)
+
+  const favoriteMoviesList = movies.filter(m => {
+    return favoriteMoviesId.includes(m._id)
+  })
 
   const handleMovieDelete = (movieId) => {
-    const currentUser = localStorage.getItem('user');
     axios.delete(`https://movie-api-93167.herokuapp.com/users/${currentUser}/movies/${movieId}`, {
       headers: { Authorization: `Bearer ${token}`}
     })
     .then(() => {
       alert(`The movie was successfully deleted.`)
+      window.open('/users/:username', '_self');
     }).
     catch(error => console.error(error))
   }
 
   return (
     <Fragment>
-      <Row>
-        {favoriteMovies.length === 0 ? (
-          <Col>You have no favorite movies marked.</Col>
+      {favoriteMoviesList.length === 0 ? (
+          <p>You have no favorite movies yet.</p>
           ) : (
-            favoriteMovies.map((movie) => {
+            favoriteMoviesList.map((movie) => {
               return (
-              <Col>
-                <Card>
+              <Col xs={10} sm={8} md={6} lg={4} >
+                <Card id="movie-card">
                   <Link to={`/movies/${movie._id}`}>
                     <Card.Img variant="top" src={movie.ImagePath} />
                   </Link>
@@ -41,7 +45,12 @@ export function FavoriteMoviesView(props) {
                     <Link to={`/movies/${movie._id}`}>
                       <Button className="button" variant="outline-primary" size="sm">Open</Button>
                     </Link>
-                    <Button className="button" variant="outline-primary" size="sm" onClick={handleMovieDelete(movie._id)} >Remove from list</Button>
+                    <Button 
+                    className="button ml-2" 
+                    variant="outline-primary" 
+                    size="sm" onClick={()=> {handleMovieDelete(movie._id)}} >
+                      Remove
+                    </Button>
                   </Card.Body>
                 </Card>
               </Col>
@@ -49,7 +58,6 @@ export function FavoriteMoviesView(props) {
             })
           )
         }
-      </Row>
     </Fragment>
   )
 }
