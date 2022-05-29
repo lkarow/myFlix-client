@@ -48,7 +48,6 @@ export function RegistrationView(props) {
     e.preventDefault();
     const isReq = validate();
     if (isReq) {
-      console.log(username, password, email, birthday);
       axios.post('https://movie-api-93167.herokuapp.com/users', {
         Username: username,
         Password: password,
@@ -57,7 +56,7 @@ export function RegistrationView(props) {
       })
       .then(response => {
         const data = response.data;
-        console.log('data');
+        console.log(data);
         alert('Registration successful, please login.');
         window.open('/', '_self');
       })

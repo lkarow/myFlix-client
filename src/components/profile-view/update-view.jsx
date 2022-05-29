@@ -8,12 +8,10 @@ import './profile-view.scss';
 
 export function UpdateView(props) {
   const { user } = props;
-  const [ userUpdate, setUserUpdate ] = useState(props.user);
   const [ username, setUsername] = useState('');
   const [ password, setPassword] = useState('');
   const [ email, setEmail] = useState('');
   const [ birthday, setBirthday] = useState('');
-  const currentUser = localStorage.getItem('user');
   const [ values, setValues] = useState({
     usernameErr: '',
     passwordErr: '',
@@ -64,6 +62,7 @@ export function UpdateView(props) {
       .then(response => {
         console.log(response.data);
         alert('Profile was successfully updated.');
+        window.open('/users/:username', '_self');
       })
       .catch(error => {
         console.error(error);
@@ -74,7 +73,8 @@ export function UpdateView(props) {
 
   return (
     <Container id="update-form" className="mt-5">
-      <Row className="justify-content-center">
+      <Row><h4>Edit profile</h4></Row>
+      <Row>
         <Col sm="10" md="8" lg="6">
           <Form>
             <Form.Group controlId="formUsername">
