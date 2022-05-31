@@ -10,19 +10,20 @@ import './movie-card.scss';
 
 export class MovieCard extends React.Component {
 
-  addToFavoriteList(movieId) {
+  async addToFavoriteList(movieId) {
     const currentUser = localStorage.getItem('user');
     const token = localStorage.getItem('token');
-    axios.put(`https://movie-api-93167.herokuapp.com/users/${currentUser}/movies/${movieId}`, 
-    {},
-    {
-      headers: { Authorization: `Bearer ${token}`}
-    })
-    .then((response) => {
-      console.log(response.data)
-      alert(`The movie was successfully add to your list.`)
-    }).
-    catch(error => console.error(error))
+    try {
+      let response = await axios.put(`https://movie-api-93167.herokuapp.com/users/${currentUser}/movies/${movieId}`, 
+      {},
+      {
+        headers: { Authorization: `Bearer ${token}`}
+      })
+        console.log(response.data)
+        alert(`The movie was successfully add to your list.`)
+    } catch(error) {
+        console.error(error)
+      }
   }
 
   render() {
