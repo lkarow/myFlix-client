@@ -25,16 +25,14 @@ class MainView extends React.Component {
     super();
     this.state = {
       selectedMovie: null,
-      user: null,
     };
   }
 
   componentDidMount() {
     let accessToken = localStorage.getItem('token');
     if (accessToken !== null) {
-      this.setState({
-        user: localStorage.getItem('user'),
-      });
+      const { setUser } = this.props;
+      setUser(localStorage.getItem('user'));
       this.getMovies(accessToken);
     }
   }
@@ -56,22 +54,20 @@ class MainView extends React.Component {
   // When a user successfully logs in, this function updates the 'user' property in state to that particular user
   onLoggedIn(authData) {
     console.log(authData);
-    this.setState({
-      user: authData.user.Username,
-    });
+
     localStorage.setItem('token', authData.token);
     localStorage.setItem('user', authData.user.Username);
     this.getMovies(authData.token);
+    const { setUser } = this.props;
+    setUser(localStorage.getItem('user'));
   }
 
   render() {
-    const { movies } = this.props;
-    const { user } = this.state;
-
+    const { movies, user } = this.props;
     return (
       <Router>
         <Navbar user={user} />
-        <Row className="main-view justify-content-md-center">
+        <Row className="main-view justify-content-md-center mb-5">
           <Route
             exact
             path="/"
