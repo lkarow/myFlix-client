@@ -20,7 +20,7 @@ export class MovieCard extends React.Component {
         headers: { Authorization: `Bearer ${token}`}
       })
         console.log(response.data)
-        alert(`The movie was successfully add to your list.`)
+        alert(`The movie was successfully added to your list.`)
     } catch(error) {
         console.error(error)
       }
