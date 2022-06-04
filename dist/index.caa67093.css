@@ -6,26 +6,6 @@
 body {
   background-color: rgb(9, 27, 73);
 }
-.director-view {
-  color: rgb(245, 245, 245);
-}
-
-.label {
-  font-weight: bold;
-}
-.genre-view {
-  color: rgb(245, 245, 245);
-}
-
-.label {
-  font-weight: bold;
-}
-#login-form {
-  background-color: rgb(9, 27, 73);
-  color: rgb(245, 245, 245);
-  position: absolute;
-  top: 30%;
-}
 .main-view {
   row-gap: 30px;
 }
@@ -53,6 +33,26 @@ body {
   background-color: rgb(28, 57, 128) !important;
   color: rgb(245, 245, 245);
 }
+.director-view {
+  color: rgb(245, 245, 245);
+}
+
+.label {
+  font-weight: bold;
+}
+.genre-view {
+  color: rgb(245, 245, 245);
+}
+
+.label {
+  font-weight: bold;
+}
+#login-form {
+  background-color: rgb(9, 27, 73);
+  color: rgb(245, 245, 245);
+  position: absolute;
+  top: 30%;
+}
 .movie-view {
   color: rgb(245, 245, 245);
 }
@@ -60,11 +60,18 @@ body {
 .label {
   font-weight: bold;
 }
+.navbar-light .navbar-nav .nav-link {
+  color: rgb(9, 27, 73);
+}
 #profile-form {
   background-color: rgb(9, 27, 73);
   color: rgb(245, 245, 245);
   position: absolute;
   top: 30%;
+}
+
+#update-form {
+  padding: 0;
 }
 #registration-form {
   background-color: rgb(9, 27, 73);
