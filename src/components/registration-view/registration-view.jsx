@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 
-import { Button, Col, Container, Form, Row } from 'react-bootstrap/';
+import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 
 import './registration-view.scss';
 
@@ -43,7 +43,11 @@ export function RegistrationView() {
     if (!email) {
       setValues({ ...values, emailErr: 'Email required' });
       isReq = false;
-    } else if (email.indexOf('@') === -1) {
+    } else if (
+      !email.match(
+        /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      )
+    ) {
       setValues({ ...values, emailErr: 'Enter valid email' });
       isReq = false;
     }
@@ -64,7 +68,6 @@ export function RegistrationView() {
             Birthday: birthday,
           }
         );
-        console.log(response.data);
         alert('Registration successful, please login.');
         window.open('/', '_self');
       } catch {
@@ -104,7 +107,7 @@ export function RegistrationView() {
               {values.passwordErr && <p>{values.passwordErr}</p>}
             </Form.Group>
             <Form.Group controlId="formEmail">
-              <Form.Label>Password:</Form.Label>
+              <Form.Label>Email:</Form.Label>
               <Form.Control
                 type="text"
                 value={email}
@@ -116,7 +119,7 @@ export function RegistrationView() {
               {values.emailErr && <p>{values.emailErr}</p>}
             </Form.Group>
             <Form.Group controlId="formBirthday">
-              <Form.Label>Password:</Form.Label>
+              <Form.Label>Birthday:</Form.Label>
               <Form.Control
                 type="text"
                 value={birthday}
