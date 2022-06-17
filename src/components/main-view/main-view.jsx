@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 
-import { Col, Row } from 'react-bootstrap/';
+import { Col, Row } from 'react-bootstrap';
 
 import { setMovies, setUser } from '../../actions/actions';
 
@@ -53,12 +53,11 @@ class MainView extends React.Component {
 
   // When a user successfully logs in, this function updates the 'user' property in state to that particular user
   onLoggedIn(authData) {
-    console.log(authData);
     localStorage.setItem('token', authData.token);
     localStorage.setItem('user', authData.user.Username);
     this.getMovies(authData.token);
     const { setUser } = this.props;
-    setUser(localStorage.getItem('user'));
+    setUser(authData.user.Username);
   }
 
   render() {

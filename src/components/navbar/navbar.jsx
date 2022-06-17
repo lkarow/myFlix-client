@@ -23,7 +23,6 @@ export function Navbar({ user }) {
       <Navbar.Brand href="/">
         <strong>myFlix</strong>
       </Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Toggle aria-controls="navbar-nav" />
       <Navbar.Collapse>
         <Nav className="me-auto">

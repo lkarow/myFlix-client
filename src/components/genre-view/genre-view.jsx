@@ -7,7 +7,7 @@ import './genre-view.scss';
 
 export class GenreView extends React.Component {
   render() {
-    const { genre, movie, onBackClick } = this.props;
+    const { genre, onBackClick } = this.props;
 
     return (
       <Container className="director-view">
@@ -19,15 +19,23 @@ export class GenreView extends React.Component {
           <Col className="label">Description: </Col>
           <Col className="value">{genre.Description}</Col>
         </Row>
-        <Button className="d-block mt-3" onClick={() => { onBackClick(null); }} variant="warning">Back</Button>
+        <Button
+          className="d-block mt-3"
+          onClick={() => {
+            onBackClick(null);
+          }}
+          variant="warning"
+        >
+          Back
+        </Button>
       </Container>
-    )
+    );
   }
 }
 
 GenreView.propTypes = {
   genre: PropTypes.shape({
     Name: PropTypes.string.isRequired,
-    Description: PropTypes.string.isRequired
-  }).isRequired
+    Description: PropTypes.string.isRequired,
+  }).isRequired,
 };
