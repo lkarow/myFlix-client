@@ -10,7 +10,9 @@ This is the client-side interface for a movie app based on server-side REST API 
 - React-Bootstrap
 - Redux
 - JavaScript
+- Parcel
 - SCSS
+- HTML
 
 ## Dependencies
 
@@ -21,3 +23,24 @@ This is the client-side interface for a movie app based on server-side REST API 
 - React-DOM
 - React-Router-DOM
 - Redux
+
+## Get Started
+
+1. Clone the project
+2. Install all dependencies mentioned in package.json
+3. cd to the project directory
+4. Run it by:
+
+```bash
+$npm run dev
+```
+
+Note: Please make sure you install parcel v2!
+
+## Run the Project
+
+You can use the command:
+
+```bash
+parcel src/index.html
+```
