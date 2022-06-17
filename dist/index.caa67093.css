@@ -1,4 +1,83 @@
-.my-flix {
-  color: steelblue;
+* {
+  font-family: Raleway, sans-serif;
+  line-height: 1.8;
 }
+
+body {
+  background-color: rgb(9, 27, 73);
+}
+.main-view {
+  row-gap: 30px;
+}
+
+#movie-card {
+  background-color: rgb(245, 245, 245);
+  color: rgb(9, 27, 73);
+  height: 100%;
+}
+
+#card-title {
+  font-weight: bold;
+}
+
+.button {
+  border: 1px solid rgb(9, 27, 73);
+  color: rgb(9, 27, 73);
+}
+.button:hover {
+  background-color: rgb(9, 27, 73);
+  border: 1px solid rgb(9, 27, 73);
+  color: rgb(245, 245, 245);
+}
+.button:active {
+  background-color: rgb(28, 57, 128) !important;
+  color: rgb(245, 245, 245);
+}
+.director-view {
+  color: rgb(245, 245, 245);
+}
+
+.label {
+  font-weight: bold;
+}
+.genre-view {
+  color: rgb(245, 245, 245);
+}
+
+.label {
+  font-weight: bold;
+}
+#login-form {
+  background-color: rgb(9, 27, 73);
+  color: rgb(245, 245, 245);
+  position: absolute;
+  top: 30%;
+}
+.movie-view {
+  color: rgb(245, 245, 245);
+}
+
+.label {
+  font-weight: bold;
+}
+.navbar-light .navbar-nav .nav-link {
+  color: rgb(9, 27, 73);
+}
+#profile-form {
+  background-color: rgb(9, 27, 73);
+  color: rgb(245, 245, 245);
+  position: absolute;
+  top: 30%;
+}
+
+#update-form {
+  padding: 0;
+}
+#registration-form {
+  background-color: rgb(9, 27, 73);
+  color: rgb(245, 245, 245);
+  position: absolute;
+  top: 30%;
+}
+
 /*# sourceMappingURL=index.caa67093.css.map */

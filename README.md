@@ -8,6 +8,7 @@ This is the client-side interface for a movie app based on server-side REST API 
 
 - React
 - React-Bootstrap
+- Redux
 - JavaScript
 - SCSS
 
@@ -19,3 +20,4 @@ This is the client-side interface for a movie app based on server-side REST API 
 - React-Bootstrap
 - React-DOM
 - React-Router-DOM
+- Redux
