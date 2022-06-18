@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Navbar, Nav } from 'react-bootstrap';
+import { Navbar as NavbarBootstrap, Nav } from 'react-bootstrap';
 
 import './navbar.scss';
 
@@ -19,12 +19,12 @@ export function Navbar({ user }) {
   };
 
   return (
-    <Navbar bg="light" expand="lg" className="mb-5">
-      <Navbar.Brand href="/">
+    <NavbarBootstrap bg="light" expand="lg" className="mb-5">
+      <NavbarBootstrap.Brand href="/">
         <h1>myFlix</h1>
-      </Navbar.Brand>
-      <Navbar.Toggle aria-controls="navbar-nav" />
-      <Navbar.Collapse>
+      </NavbarBootstrap.Brand>
+      <NavbarBootstrap.Toggle aria-controls="navbar-nav" />
+      <NavbarBootstrap.Collapse>
         <Nav className="me-auto">
           {isAuth() && (
             <Fragment>
@@ -40,7 +40,7 @@ export function Navbar({ user }) {
             </Fragment>
           )}
         </Nav>
-      </Navbar.Collapse>
-    </Navbar>
+      </NavbarBootstrap.Collapse>
+    </NavbarBootstrap>
   );
 }
