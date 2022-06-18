@@ -37,7 +37,7 @@ export class MovieView extends React.Component {
           </Link>
         </Row>
         <Button
-          className="btn-back d-block"
+          className="d-block mt-5"
           onClick={() => {
             onBackClick(null);
           }}
