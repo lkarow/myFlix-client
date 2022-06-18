@@ -12,29 +12,32 @@ export class MovieView extends React.Component {
 
     return (
       <Container className="movie-view">
-        <Row className="movie-poster">
-          <img src={movie.ImagePath} />
-        </Row>
-        <Row className="movie-title mt-3">
-          <Col className="label">Title: </Col>
+        <Row className="movie-title mb-4">
           <Col className="value">{movie.Title}</Col>
         </Row>
-        <Row className="movie-description mt-3">
-          <Col className="label">Description: </Col>
-          <Col className="value">{movie.Description}</Col>
+        <Row className="mb-3 gx-5">
+          <Col className="movie-poster mb-4" md={5} lg={4}>
+            <img src={movie.ImagePath} />
+          </Col>
+          <Col className="movie-description" xs={12} sm={12} md={7}>
+            <Col className="label">Description: </Col>
+            <Col className="value">{movie.Description}</Col>
+          </Col>
         </Row>
-        <Link to={`/directors/${movie.Director.Name}`}>
-          <Button className="d-block mt-3" variant="info">
-            Director
-          </Button>
-        </Link>
-        <Link to={`/genres/${movie.Genre.Name}`}>
-          <Button className="d-block mt-3" variant="info">
-            Genre
-          </Button>
-        </Link>
+        <Row className="movie-buttons-row">
+          <Link to={`/directors/${movie.Director.Name}`} className="btn-link">
+            <Button className="btn-movie d-block" variant="info">
+              Director
+            </Button>
+          </Link>
+          <Link to={`/genres/${movie.Genre.Name}`} className="btn-link">
+            <Button className="btn-movie d-block ml-3" variant="info">
+              Genre
+            </Button>
+          </Link>
+        </Row>
         <Button
-          className="d-block mt-3"
+          className="btn-back d-block"
           onClick={() => {
             onBackClick(null);
           }}

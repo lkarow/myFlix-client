@@ -32,18 +32,22 @@ export class MovieCard extends React.Component {
     return (
       <Card id="movie-card">
         <Link to={`/movies/${movie._id}`}>
-          <Card.Img variant="top" src={movie.ImagePath} />
+          <Card.Img className="card-img" variant="top" src={movie.ImagePath} />
         </Link>
         <Card.Body>
           <Card.Title id="card-title">{movie.Title}</Card.Title>
           <Card.Text>{movie.Description}</Card.Text>
           <Link to={`/movies/${movie._id}`}>
-            <Button className="button" variant="outline-primary" size="sm">
+            <Button
+              className="button btn-open"
+              variant="outline-primary"
+              size="sm"
+            >
               Open
             </Button>
           </Link>
           <Button
-            className="button ml-2"
+            className="button btn-add ml-2"
             variant="outline-primary"
             size="sm"
             onClick={() => this.addToFavoriteList(movie._id)}

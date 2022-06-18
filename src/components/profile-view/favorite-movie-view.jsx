@@ -38,17 +38,21 @@ export function FavoriteMoviesView(props) {
       ) : (
         favoriteMoviesList.map((movie) => {
           return (
-            <Col xs={10} sm={8} md={6} lg={4} key={movie._id} className="mb-4">
+            <Col sm={6} md={6} lg={4} xl={3} key={movie._id} className="mb-4">
               <Card id="movie-card">
                 <Link to={`/movies/${movie._id}`}>
-                  <Card.Img variant="top" src={movie.ImagePath} />
+                  <Card.Img
+                    className="card-img"
+                    variant="top"
+                    src={movie.ImagePath}
+                  />
                 </Link>
                 <Card.Body>
                   <Card.Title>{movie.Title}</Card.Title>
                   <Card.Text>{movie.Description}</Card.Text>
                   <Link to={`/movies/${movie._id}`}>
                     <Button
-                      className="button"
+                      className="button btn-open"
                       variant="outline-primary"
                       size="sm"
                     >
@@ -56,7 +60,7 @@ export function FavoriteMoviesView(props) {
                     </Button>
                   </Link>
                   <Button
-                    className="button ml-2"
+                    className="button btn-remove ml-2"
                     variant="outline-primary"
                     size="sm"
                     onClick={() => {

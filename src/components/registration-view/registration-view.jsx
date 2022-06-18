@@ -80,6 +80,9 @@ export function RegistrationView() {
   return (
     <Container id="registration-form">
       <Row className="justify-content-center">
+        <h2>Sign up for myFlix</h2>
+      </Row>
+      <Row className="justify-content-center mt-3">
         <Col sm="10" md="8" lg="6">
           <Form>
             <Form.Group controlId="formUsername">
@@ -94,7 +97,7 @@ export function RegistrationView() {
               {/* display validation error */}
               {values.usernameErr && <p>{values.usernameErr}</p>}
             </Form.Group>
-            <Form.Group controlId="formPassword">
+            <Form.Group controlId="formPassword" className="mt-3">
               <Form.Label>Password:</Form.Label>
               <Form.Control
                 type="password"
@@ -106,7 +109,7 @@ export function RegistrationView() {
               {/* display validation error */}
               {values.passwordErr && <p>{values.passwordErr}</p>}
             </Form.Group>
-            <Form.Group controlId="formEmail">
+            <Form.Group controlId="formEmail" className="mt-3">
               <Form.Label>Email:</Form.Label>
               <Form.Control
                 type="text"
@@ -118,7 +121,7 @@ export function RegistrationView() {
               {/* display validation error */}
               {values.emailErr && <p>{values.emailErr}</p>}
             </Form.Group>
-            <Form.Group controlId="formBirthday">
+            <Form.Group controlId="formBirthday" className="mt-3">
               <Form.Label>Birthday:</Form.Label>
               <Form.Control
                 type="text"
@@ -127,7 +130,7 @@ export function RegistrationView() {
                 placeholder="YYYY-MM-DD"
               />
             </Form.Group>
-            <Row className="mt-3 justify-content-start">
+            <Row className="mt-4 justify-content-start">
               <Col sm="10" md="8" lg="6">
                 <Button variant="warning" type="submit" onClick={handleSubmit}>
                   Register

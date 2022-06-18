@@ -1,10 +1,18 @@
 #profile-form {
-  background-color: rgb(9, 27, 73);
+  background-color: rgb(9, 27, 73, 0.8);
+  border-radius: 10px;
   color: rgb(245, 245, 245);
-  position: absolute;
-  top: 30%;
+  margin: 0 auto;
+  padding: 30px;
 }
 
 #update-form {
   padding: 0;
+}
+
+.btn-remove {
+  position: absolute;
+  left: 80px;
+  bottom: 20px;
+  padding: 5px 8px;
 }

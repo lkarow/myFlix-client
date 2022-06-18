@@ -21,7 +21,7 @@ export function Navbar({ user }) {
   return (
     <Navbar bg="light" expand="lg" className="mb-5">
       <Navbar.Brand href="/">
-        <strong>myFlix</strong>
+        <h1>myFlix</h1>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="navbar-nav" />
       <Navbar.Collapse>

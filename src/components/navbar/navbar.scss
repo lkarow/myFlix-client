@@ -1,3 +1,12 @@
 .navbar-light .navbar-nav .nav-link {
   color: rgb(9, 27, 73);
 }
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: rgb(21, 75, 211);
+  font-weight: 700;
+}
+
+.navbar h1 {
+  font-weight: 700;
+}
