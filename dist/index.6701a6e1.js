@@ -47070,7 +47070,7 @@ class MovieView extends _reactDefault.default.Component {
                     ]
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
-                    className: "btn-back d-block",
+                    className: "d-block mt-5",
                     onClick: ()=>{
                         onBackClick(null);
                     },
