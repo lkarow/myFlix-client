@@ -1,0 +1,37 @@
+.footer {
+  background-color: #fff;
+  margin-top: 100px;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+}
+.footer a {
+  color: rgb(9, 27, 73);
+}
+
+.footer a:hover {
+  color: rgb(21, 75, 211);
+  font-weight: 700;
+}
+
+.icon {
+  height: 30px;
+  margin: 5px;
+}
+
+.acknowledgment {
+  font-size: 12px;
+}
+
+.container-to-top {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+.btn-to-top {
+  padding: 1rem 1rem;
+  text-align: center;
+  background-color: transparent;
+  border: none;
+}
