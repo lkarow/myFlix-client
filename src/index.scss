@@ -4,5 +4,14 @@
 }
 
 body {
-  background-color: rgb(9, 27, 73);
+  background-image: url('./img/bg-img.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+.container {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
 }
