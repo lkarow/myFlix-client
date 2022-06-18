@@ -4,6 +4,14 @@
 
 This is the client-side interface for a movie app based on server-side REST API and database ([movie_api](https://github.com/lkarow/movie_api)). The interface is built with React and Bootstrap. Users are able to sign up and login, update their personal information, and create a list of their favorite movies.
 
+### Login View
+
+<img src="./public/login-view.png" width=50% height=50%>
+
+### Main View
+
+<img src="./public/main-view.png" width=50% height=50%>
+
 ## Built With
 
 - React
