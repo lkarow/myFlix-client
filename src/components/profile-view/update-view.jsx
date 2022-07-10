@@ -114,7 +114,7 @@ export function UpdateView(props) {
               {values.passwordErr && <p>{values.passwordErr}</p>}
             </Form.Group>
             <Form.Group controlId="formEmail" className="mt-3">
-              <Form.Label>Password:</Form.Label>
+              <Form.Label>Email:</Form.Label>
               <Form.Control
                 type="text"
                 value={email}
@@ -126,7 +126,7 @@ export function UpdateView(props) {
               {values.emailErr && <p>{values.emailErr}</p>}
             </Form.Group>
             <Form.Group controlId="formBirthday" className="mt-3">
-              <Form.Label>Password:</Form.Label>
+              <Form.Label>Birthday:</Form.Label>
               <Form.Control
                 type="text"
                 value={birthday}
