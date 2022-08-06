@@ -1,5 +1,7 @@
 # myFlix-client
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9c111562-791a-43f0-aa97-078af0cef12e/deploy-status)](https://app.netlify.com/sites/myflix-501fc4/deploys)
+
 ## Project description
 
 This is the client-side interface for a movie app based on server-side REST API and database ([movie_api](https://github.com/lkarow/movie_api)). The interface is built with React and Bootstrap. Users are able to sign up and login, update their personal information, and create a list of their favorite movies.
