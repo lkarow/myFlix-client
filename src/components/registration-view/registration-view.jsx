@@ -60,7 +60,7 @@ export function RegistrationView() {
     if (isReq) {
       try {
         let response = await axios.post(
-          'https://movie-api-93167.herokuapp.com/users',
+          'https://movie-api-pink.vercel.app/users',
           {
             Username: username,
             Password: password,

@@ -19,7 +19,7 @@ export function FavoriteMoviesView(props) {
   const handleMovieDelete = async (movieId) => {
     try {
       await axios.delete(
-        `https://movie-api-93167.herokuapp.com/users/${currentUser}/movies/${movieId}`,
+        `https://movie-api-pink.vercel.app/users/${currentUser}/movies/${movieId}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }

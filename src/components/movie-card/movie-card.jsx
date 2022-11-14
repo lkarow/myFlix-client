@@ -14,7 +14,7 @@ export class MovieCard extends React.Component {
     const token = localStorage.getItem('token');
     try {
       let response = await axios.put(
-        `https://movie-api-93167.herokuapp.com/users/${currentUser}/movies/${movieId}`,
+        `https://movie-api-pink.vercel.app/users/${currentUser}/movies/${movieId}`,
         {},
         {
           headers: { Authorization: `Bearer ${token}` },

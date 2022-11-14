@@ -58,7 +58,7 @@ export function UpdateView(props) {
       const token = localStorage.getItem('token');
       axios
         .put(
-          `https://movie-api-93167.herokuapp.com/users/${user.Username}`,
+          `https://movie-api-pink.vercel.app/users/${user.Username}`,
           {
             Username: username,
             Password: password,

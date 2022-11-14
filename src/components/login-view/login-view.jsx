@@ -39,7 +39,7 @@ export function LoginView(props) {
       try {
         // Send a request to the server for authentication
         let { data } = await axios.post(
-          'https://movie-api-93167.herokuapp.com/login',
+          'https://movie-api-pink.vercel.app/login',
           {
             Username: username,
             Password: password,

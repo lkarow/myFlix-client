@@ -19,7 +19,7 @@ export function ProfileView(props) {
   const getUser = async () => {
     try {
       let response = await axios.get(
-        `https://movie-api-93167.herokuapp.com/users/${currentUser}`,
+        `https://movie-api-pink.vercel.app/users/${currentUser}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -38,7 +38,7 @@ export function ProfileView(props) {
   const handleDelete = async () => {
     try {
       await axios.delete(
-        `https://movie-api-93167.herokuapp.com/users/${currentUser}`,
+        `https://movie-api-pink.vercel.app/users/${currentUser}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
